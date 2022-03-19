@@ -18,8 +18,6 @@ function ForecastSummary(props) {
   );
 }
 
-export default ForecastSummary;
-
 ForecastSummary.propTypes = {
   date: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
@@ -29,3 +27,5 @@ ForecastSummary.propTypes = {
     max: PropTypes.number,
   }).isRequired,
 };
+
+export default ForecastSummary;

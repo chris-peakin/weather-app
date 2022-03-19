@@ -8,7 +8,6 @@ describe("App", () => {
     const h1Element = screen.getByText(/Durham, UK/i);
     expect(h1Element).toBeInTheDocument();
   });
-});
 
 // test('renders learn react link', () => {
 //   render(<App />);
