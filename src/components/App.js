@@ -3,7 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
-import forecasts from "../data/forecast.json";
 
 function App({ forecasts, location }) {
   return (
