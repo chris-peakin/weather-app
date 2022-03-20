@@ -6,7 +6,7 @@ describe("ForecastSummary", () => {
     const validProps = {
         date: 1111111,
         description: "Generic Description Goes Here",
-        icon: "Generic Icon Goes Here",
+        icon: "800",
         temperature: {
             min: 12,
             max: 22,
@@ -35,9 +35,8 @@ describe("ForecastSummary", () => {
                 />
         );
 
-        expect(getByText("1111111")).toHaveClass("forecast-summary__date");
+        expect(getByText("Thu 1st Jan")).toHaveClass("forecast-summary__date");
         expect(getByText("Generic Description Goes Here")).toHaveClass("forecast-summary__description");
-        expect(getByText("Generic Icon Goes Here")).toHaveClass("forecast-summary__icon");
         expect(getByTestId("forecast-icon")).toHaveClass("forecast-summary__icon");
         expect(getByText("22°C")).toHaveClass("forecast-summary__temperature");
     });
