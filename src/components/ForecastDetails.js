@@ -3,44 +3,40 @@ import PropTypes from "prop-types";
 import moment from "moment";
 
 function ForecastDetails({ details }) {
-  const { forecast } = details;
+  const { date, temperature, humidity, wind } = details;
   return (
     <div className="forecast-details" data-testid="forecast-details">
       <div className="forecast-details__date">
-        {moment(forecast.date).format("ddd Do MMM")}
+        {moment(date).format("ddd Do MMM")}
       </div>
       <div className="forecast-details__temperaturemax">
-        {forecast.temperature.max}
+        {temperature.max}
         &deg;C
       </div>
       <div className="forecast-details__temperaturemin">
-        {forecast.temperature.min}
+        {temperature.min}
         &deg;C
       </div>
-      <div className="forecast-details__humidity">{forecast.humidity}</div>
-      <div className="forecast-details__windspeed">{forecast.wind.speed}</div>
-      <div className="forecast-details__winddirection">
-        {forecast.wind.direction}
-      </div>
+      <div className="forecast-details__humidity">{humidity}</div>
+      <div className="forecast-details__windspeed">{wind.speed}</div>
+      <div className="forecast-details__winddirection">{wind.direction}</div>
     </div>
   );
 }
 
 ForecastDetails.propTypes = {
-  details: PropTypes.objectOf(
-    PropTypes.shape({
-      date: PropTypes.number,
-      temperature: PropTypes.shape({
-        min: PropTypes.number,
-        max: PropTypes.number,
-      }).isRequired,
-      humidity: PropTypes.number,
-      wind: PropTypes.shape({
-        speed: PropTypes.number,
-        direction: PropTypes.string,
-      }).isRequired,
-    })
-  ).isRequired,
+  details: PropTypes.shape({
+    date: PropTypes.number,
+    temperature: PropTypes.shape({
+      min: PropTypes.number,
+      max: PropTypes.number,
+    }).isRequired,
+    humidity: PropTypes.number,
+    wind: PropTypes.shape({
+      speed: PropTypes.number,
+      direction: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default ForecastDetails;

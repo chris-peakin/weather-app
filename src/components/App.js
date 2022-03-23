@@ -5,12 +5,12 @@ import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
 
-function App({ forecasts, location, details }) {
+function App({ forecasts, location }) {
   return (
     <div className="forecast">
       <LocationDetails city={location.city} country={location.country} />
       <ForecastSummaries forecasts={forecasts} />
-      <ForecastDetails forecasts={forecasts[0]} />
+      <ForecastDetails details={forecasts[0]} />
     </div>
   );
 }
@@ -31,20 +31,6 @@ App.propTypes = {
     city: PropTypes.string,
     country: PropTypes.string,
   }).isRequired,
-  details: PropTypes.objectOf(
-    PropTypes.shape({
-      date: PropTypes.number,
-      temperature: PropTypes.shape({
-        min: PropTypes.number,
-        max: PropTypes.number,
-      }).isRequired,
-      humidity: PropTypes.number,
-      wind: PropTypes.shape({
-        speed: PropTypes.number,
-        direction: PropTypes.string,
-      }).isRequired,
-    })
-  ).isRequired,
 };
 
 export default App;

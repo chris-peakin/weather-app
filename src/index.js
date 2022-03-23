@@ -6,11 +6,7 @@ import forecast from "./data/forecast.json";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App
-      forecasts={forecast.forecasts}
-      location={forecast.location}
-      details={forecast.details}
-    />
+    <App forecasts={forecast.forecasts} location={forecast.location} />
   </React.StrictMode>,
   document.getElementById("root")
 );
