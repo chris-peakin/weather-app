@@ -10,7 +10,7 @@ function App({ forecasts, location, details }) {
     <div className="forecast">
       <LocationDetails city={location.city} country={location.country} />
       <ForecastSummaries forecasts={forecasts} />
-      <ForecastDetails details={details.humidity} />
+      <ForecastDetails details={details[0]} />
     </div>
   );
 }
