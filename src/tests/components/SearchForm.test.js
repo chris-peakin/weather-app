@@ -15,4 +15,16 @@ describe("SearchForm", () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it("Button says the word Search", () => {
+    const { getByText } = render(
+      <SearchForm
+        onSubmit={handleCitySearch}
+        searchText="Durham"
+        setSearchText={setSearchText}
+      />
+    );
+
+    expect(getByText("Search")).toBeInTheDocument;
+  });
 });
